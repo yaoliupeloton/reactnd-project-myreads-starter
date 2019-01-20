@@ -68,9 +68,18 @@ class BooksApp extends React.Component {
     ]
   };
 
-  bookShelfChanged(bookId, shelf) {
-    alert(`Book ${bookId} changed category to ${shelf}`);
-  }
+  bookShelfChanged = (bookId, shelf) => {
+    const updatedBooks = this.state.books.map(book => {
+      if (book.id === bookId) {
+        book.shelf = shelf;
+      }
+      return book;
+    });
+
+    this.setState({
+      books: updatedBooks,
+    });
+  };
 
   render() {
     return (
