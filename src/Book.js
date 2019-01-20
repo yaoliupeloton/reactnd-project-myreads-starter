@@ -2,14 +2,14 @@ import React, {Component} from 'react'
 
 class Book extends Component {
 
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        this.props.onCategoryChange(this.props.title, event.target.value);
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.handleChange = this.handleChange.bind(this);
+    // }
+    //
+    // handleChange(event) {
+    //     this.props.onCategoryChange(event.target.value);
+    // }
 
     render() {
         return (
@@ -18,12 +18,12 @@ class Book extends Component {
                     <div className="book-cover"
                          style={{ backgroundImage: `url(${this.props.imageUrl})` }} />
                     <div className="book-shelf-changer">
-                        <select value={this.props.category} onChange={this.handleChange}>
+                        <select value={this.props.category} onChange={this.props.onCategoryChange}>
                             <option value="move" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
                             <option value="read">Read</option>
-                            <option value="none">None</option>
+                            <option value="none" disabled>None</option>
                         </select>
                     </div>
                 </div>
