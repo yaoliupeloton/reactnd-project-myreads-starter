@@ -15,5 +15,5 @@ Project status tracking.
 
 * Search Page
     * UI `DONE`
-    * book's shelf should be in correct default
+    * book's shelf should be in correct default `DONE`
     * update book shelf action

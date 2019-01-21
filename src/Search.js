@@ -38,6 +38,7 @@ class Search extends React.Component {
     render() {
 
         const {query, searchRes} = this.state;
+        const myBooks = this.props.myBooks;
 
         return (
             <div className="search-books">
@@ -53,17 +54,21 @@ class Search extends React.Component {
                 </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
-                        {searchRes.map(book => (
-                            <li key={book.id}>
-                                <Book
-                                    imageUrl={book.imageLinks.thumbnail}
-                                    title={book.title}
-                                    author={book.authors[0]}
-                                    shelf={book.shelf}
-                                    onShelfChanged={(e) => {}} //props.bookShelfChanged(book.id, e.target.value)
-                                />
-                            </li>
-                        ))}
+                        {searchRes.map(book => {
+                            const booksOnMyShelf = myBooks.filter(myBook => myBook.id === book.id);
+                            const currShelf = booksOnMyShelf.length > 0 ? booksOnMyShelf[0].shelf : "none";
+                            return (
+                                <li key={book.id}>
+                                    <Book
+                                        imageUrl={book.imageLinks.thumbnail}
+                                        title={book.title}
+                                        author={book.authors[0]}
+                                        shelf={currShelf}
+                                        onShelfChanged={(e) => {}} //props.bookShelfChanged(book.id, e.target.value)
+                                    />
+                                </li>
+                            )
+                        })}
                     </ol>
                 </div>
             </div>
