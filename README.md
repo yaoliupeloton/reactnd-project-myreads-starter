@@ -10,6 +10,7 @@ Project status tracking.
 * React Router `DONE`
 * Display All authors.
 * Missing thumbnails/authors.
+* Update readme
 
 
 * Search Page

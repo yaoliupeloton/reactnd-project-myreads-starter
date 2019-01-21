@@ -14,10 +14,24 @@ class Search extends React.Component {
         console.log(`updated query: ${query}`);
         this.setState({ query: query.trim()});
 
-        BooksAPI.search(query).then(books => {
-            this.setState({
-                searchRes: books.filter(it => it.imageLinks && it.imageLinks.thumbnail && it.authors && it.authors.length > 0),
+        if (query) {
+            BooksAPI.search(query).then(books => {
+                if (books.length > 0) {
+                    this.setState({
+                        searchRes: books.filter(it => it.imageLinks && it.imageLinks.thumbnail && it.authors && it.authors.length > 0),
+                    });
+                } else {
+                    this.clearSearchRes();
+                }
             });
+        } else {
+            this.clearSearchRes();
+        }
+    };
+
+    clearSearchRes = () => {
+        this.setState({
+            searchRes: [],
         });
     };
 
