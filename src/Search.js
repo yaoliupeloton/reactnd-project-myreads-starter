@@ -56,14 +56,11 @@ class Search extends React.Component {
                     <ol className="books-grid">
                         {searchRes.map(book => {
                             const booksOnMyShelf = myBooks.filter(myBook => myBook.id === book.id);
-                            const currShelf = booksOnMyShelf.length > 0 ? booksOnMyShelf[0].shelf : "none";
+                            book.shelf = booksOnMyShelf.length > 0 ? booksOnMyShelf[0].shelf : "none";
                             return (
                                 <li key={book.id}>
                                     <Book
-                                        imageUrl={book.imageLinks.thumbnail}
-                                        title={book.title}
-                                        author={book.authors[0]}
-                                        shelf={currShelf}
+                                        data={book}
                                         onShelfChanged={(e) => {this.props.bookShelfChanged(book, e.target.value)}}
                                     />
                                 </li>

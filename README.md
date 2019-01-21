@@ -1,20 +1,18 @@
 # MyReads Project
 
-Project status tracking.
+This is the MyReads project for Udacity Nanodegree program in React. [React Nanodegree program](https://classroom.udacity.com/nanodegrees/nd019/dashboard/overview).
 
-## TODOs
+## Project Setup
 
-* Render books and shelves from state. `DONE`
-* On change shelf update state. `DONE`
-* Hook up with API. `DONE`
-* React Router `DONE`
-* Display All authors.
-* Missing thumbnails/authors. `DONE`
-* Update readme
-* handle NONE shelf.
+1. Clone the Project
+2. Install the dependencies - `npm install`
+3. Start the app - `npm start`
 
+## Tools and Dependencies
 
-* Search Page
-    * UI `DONE`
-    * book's shelf should be in correct default `DONE`
-    * update book shelf action `DONE`
+For the web app to run properly, the following dependencies must be installed:
+
+* React Router
+
+## Demo
+

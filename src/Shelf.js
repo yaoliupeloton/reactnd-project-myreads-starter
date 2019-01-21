@@ -11,10 +11,7 @@ function Shelf(props) {
                         props.books.filter(book => book.shelf === props.shelf).map(book => (
                             <li key={book.id}>
                                 <Book
-                                    imageUrl={book.imageLinks.thumbnail}
-                                    title={book.title}
-                                    author={book.authors[0]}
-                                    shelf={book.shelf}
+                                    data={book}
                                     onShelfChanged={(e) => {props.bookShelfChanged(book, e.target.value)}}
                                 />
                             </li>
