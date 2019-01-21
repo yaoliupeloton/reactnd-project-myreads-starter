@@ -1,6 +1,8 @@
 import './App.css'
 import React from 'react';
 import BookShelf from "./BookShelf";
+import { Route } from 'react-router-dom';
+import Search from './Search';
 
 class BooksApp extends React.Component {
   state = {
@@ -83,15 +85,17 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        <BookShelf
-            books={this.state.books}
-            bookShelfChanged={this.bookShelfChanged}
-        />
-        <div className="open-search">
-          <button>Add a book</button>
+        <div className="app">
+          <Route exact path='/' render={() => (
+              <BookShelf
+                  books={this.state.books}
+                  bookShelfChanged={this.bookShelfChanged}
+              />
+          )}/>
+          <Route path='/search' render={() => (
+              <Search />
+          )}/>
         </div>
-      </div>
     )
   }
 }
