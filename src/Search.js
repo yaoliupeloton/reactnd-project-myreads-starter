@@ -64,7 +64,7 @@ class Search extends React.Component {
                                         title={book.title}
                                         author={book.authors[0]}
                                         shelf={currShelf}
-                                        onShelfChanged={(e) => {}} //props.bookShelfChanged(book.id, e.target.value)
+                                        onShelfChanged={(e) => {this.props.bookShelfChanged(book, e.target.value)}}
                                     />
                                 </li>
                             )

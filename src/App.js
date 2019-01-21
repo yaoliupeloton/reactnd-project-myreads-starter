@@ -20,8 +20,7 @@ class BooksApp extends React.Component {
     });
   }
 
-  bookShelfChanged = (bookId, shelf) => {
-    const book = this.state.books.filter(book => book.id === bookId)[0];
+  bookShelfChanged = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
       this.fetchAll();
     });
@@ -37,7 +36,9 @@ class BooksApp extends React.Component {
               />
           )}/>
           <Route path='/search' render={() => (
-              <Search myBooks={this.state.books}/>
+              <Search
+                  myBooks={this.state.books}
+                  bookShelfChanged={this.bookShelfChanged}/>
           )}/>
         </div>
     )

@@ -9,11 +9,12 @@ Project status tracking.
 * Hook up with API. `DONE`
 * React Router `DONE`
 * Display All authors.
-* Missing thumbnails/authors.
+* Missing thumbnails/authors. `DONE`
 * Update readme
+* handle NONE shelf.
 
 
 * Search Page
     * UI `DONE`
     * book's shelf should be in correct default `DONE`
-    * update book shelf action
+    * update book shelf action `DONE`

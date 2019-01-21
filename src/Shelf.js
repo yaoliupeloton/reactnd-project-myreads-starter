@@ -15,7 +15,7 @@ function Shelf(props) {
                                     title={book.title}
                                     author={book.authors[0]}
                                     shelf={book.shelf}
-                                    onShelfChanged={(e) => {props.bookShelfChanged(book.id, e.target.value)}}
+                                    onShelfChanged={(e) => {props.bookShelfChanged(book, e.target.value)}}
                                 />
                             </li>
                         ))
