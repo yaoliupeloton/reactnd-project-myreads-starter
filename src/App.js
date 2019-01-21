@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react';
-import Shelf from "./Shelf";
+import BookShelf from "./BookShelf";
 
 class BooksApp extends React.Component {
   state = {
@@ -84,31 +84,12 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="list-books">
-          <div className="list-books-title">
-            <h1>MyReads</h1>
-          </div>
-          <div className="list-books-content">
-            <div>
-              <Shelf shelfTitle={"Currently Reading"}
-                     shelf={"currentlyReading"}
-                     books={this.state.books}
-                     bookShelfChanged={this.bookShelfChanged}/>
-
-              <Shelf shelfTitle={"Want to Read"}
-                     shelf={"wantToRead"}
-                     books={this.state.books}
-                     bookShelfChanged={this.bookShelfChanged}/>
-
-              <Shelf shelfTitle={"Read"}
-                     shelf={"read"}
-                     books={this.state.books}
-                     bookShelfChanged={this.bookShelfChanged}/>
-            </div>
-          </div>
-          <div className="open-search">
-            <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
-          </div>
+        <BookShelf
+            books={this.state.books}
+            bookShelfChanged={this.bookShelfChanged}
+        />
+        <div className="open-search">
+          <button>Add a book</button>
         </div>
       </div>
     )

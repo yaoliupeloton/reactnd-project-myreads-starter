@@ -8,3 +8,6 @@ Project status tracking.
 * On change shelf update state. `DONE`
 * Search Page.
 * Hook up with API.
+* React Router
+* Display All authors.
+* Missing thumbnails/authors.
