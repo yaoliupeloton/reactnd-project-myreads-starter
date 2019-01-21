@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import * as BooksAPI from './BooksAPI';
-import Book from "./Shelf";
+import Book from "./Book";
 
 class Search extends React.Component {
 
@@ -41,7 +41,13 @@ class Search extends React.Component {
                     <ol className="books-grid">
                         {searchRes.map(book => (
                             <li key={book.id}>
-                                {book.title}
+                                <Book
+                                    imageUrl={book.imageLinks.thumbnail}
+                                    title={book.title}
+                                    author={book.authors[0]}
+                                    shelf={book.shelf}
+                                    onShelfChanged={(e) => {}} //props.bookShelfChanged(book.id, e.target.value)
+                                />
                             </li>
                         ))}
                     </ol>
@@ -52,11 +58,3 @@ class Search extends React.Component {
 }
 
 export default Search
-
-// <Book
-// imageUrl={book.imageLinks != null && book.imageLinks.thumbnail}
-// title={book.title}
-// author={book.authors != null && book.authors[0]}
-// shelf={book.shelf}
-// onShelfChanged={(e) => {}} //props.bookShelfChanged(book.id, e.target.value)
-// />
